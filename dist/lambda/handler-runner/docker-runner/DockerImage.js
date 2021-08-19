@@ -34,7 +34,7 @@ class DockerImage {
     (0, _debugLog.default)(`Downloading base Docker image... (${imageNameTag})`);
 
     try {
-      await (0, _execa.default)('docker', ['pull', '--disable-content-trust=false', imageNameTag]);
+      await (0, _execa.default)('docker', ['pull', '--disable-content-trust=true', imageNameTag]);
     } catch (err) {
       console.error(err.stderr);
       throw err;
