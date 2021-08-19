@@ -54,6 +54,9 @@ export default class DockerContainer {
   }
 
   _baseImage(runtime) {
+    if (runtime === 'nodejs14.x') {
+      return 'localstack/lambda-js:nodejs14.x'
+    }
     return `lambci/lambda:${runtime}`
   }
 
